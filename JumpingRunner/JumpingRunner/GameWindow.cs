@@ -21,9 +21,12 @@ namespace JumpingRunner
             Settings.PictureBoxWidth = PictureBoxGame.Width;
             Settings.PictureBoxGroundHeight = Settings.PictureBoxHeight - 30;
 
-            Player player = new BasicPlayer(new Rectangle(0, 200, 30, 30), Color.FromArgb(255,0,0));
+            Player player = new BasicPlayer(new Rectangle(20, 200, 30, 30), Color.FromArgb(255,0,0));
+            Player decorated=new PlayerHatDecorator(player);
 
-            Game = new Game(player);
+            Player glasses = new PlayerSunglassesDecorator(decorated);
+
+            Game = new Game(glasses);
             Timer.Start();
             
             

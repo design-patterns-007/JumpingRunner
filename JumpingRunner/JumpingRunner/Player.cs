@@ -19,18 +19,36 @@ namespace JumpingRunner
         public bool IsOnGround { get; set; }
         public bool IsAlive { get; set; }
 
-        public Player(Rectangle shape,Color color)
-        {
-            Shape = shape;
-            Color = color;
-        }
 
         public abstract void Paint(object sender, PaintEventArgs e);
 
-        public abstract void Update();
+        public virtual void Update()
+        {
+            _yVelocity += _gravity;
 
-        public abstract void StartJump();
+            var temp = Shape;
+            temp.Offset(0, (int) _yVelocity);
+            Shape = temp;
 
-        public abstract void EndJump();
+            if (Shape.Bottom > Settings.PictureBoxGroundHeight) {
+                _yVelocity = 0.0f;
+                IsOnGround = true;
+            }
+        }
+
+        public virtual void StartJump()
+        {
+            if (IsOnGround) {
+                _yVelocity = _jumpSpeed;
+                IsOnGround = false;
+            }
+        }
+
+        public virtual void EndJump()
+        {
+            if (_yVelocity < -10.0f) {
+                _yVelocity = -10.0f;
+            }
+        }
     }
 }
