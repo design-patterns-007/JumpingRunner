@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PictureBoxGame = new System.Windows.Forms.PictureBox();
             this.LevelLabel = new System.Windows.Forms.Label();
             this.ComboBoxLevel = new System.Windows.Forms.ComboBox();
@@ -34,6 +35,7 @@
             this.CheckBoxHat = new System.Windows.Forms.CheckBox();
             this.CheckBoxSunGlasses = new System.Windows.Forms.CheckBox();
             this.ButtonStart = new System.Windows.Forms.Button();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGame)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +46,7 @@
             this.PictureBoxGame.Size = new System.Drawing.Size(644, 281);
             this.PictureBoxGame.TabIndex = 0;
             this.PictureBoxGame.TabStop = false;
+            this.PictureBoxGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxGame_Paint);
             // 
             // LevelLabel
             // 
@@ -100,6 +103,11 @@
             this.ButtonStart.Text = "Start";
             this.ButtonStart.UseVisualStyleBackColor = true;
             // 
+            // Timer
+            // 
+            this.Timer.Interval = 16;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // GameWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,8 +120,11 @@
             this.Controls.Add(this.ComboBoxLevel);
             this.Controls.Add(this.LevelLabel);
             this.Controls.Add(this.PictureBoxGame);
+            this.KeyPreview = true;
             this.Name = "GameWindow";
             this.Text = "Form1";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameWindow_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameWindow_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -129,6 +140,7 @@
         private System.Windows.Forms.CheckBox CheckBoxHat;
         private System.Windows.Forms.CheckBox CheckBoxSunGlasses;
         private System.Windows.Forms.Button ButtonStart;
+        private System.Windows.Forms.Timer Timer;
     }
 }
 
