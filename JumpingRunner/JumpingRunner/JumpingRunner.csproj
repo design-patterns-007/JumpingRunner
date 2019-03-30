@@ -57,6 +57,7 @@
     <Compile Include="Background\BackgroundBuilder.cs" />
     <Compile Include="Observers\CollisionObserver.cs" />
     <Compile Include="Observers\Observer.cs" />
+    <Compile Include="Observers\ObstacleOutOfBoundsObserver.cs" />
     <Compile Include="Obstacles\EObstacleType.cs" />
     <Compile Include="Obstacles\Obstacle.cs" />
     <Compile Include="Obstacles\ObstacleFactory.cs" />

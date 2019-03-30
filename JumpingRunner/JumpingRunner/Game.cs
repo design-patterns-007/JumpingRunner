@@ -38,6 +38,7 @@ namespace JumpingRunner
             Obstacles.Add(obstacle);
 
             Observer collissionObserver = new CollisionObserver(this);
+            Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);
 
         }
 
@@ -46,6 +47,8 @@ namespace JumpingRunner
             Player.Update();
             obstacle.Update();
             NotifyObservers();
+
+            Console.WriteLine(Obstacles.Count);
         }
 
         public void Paint(object sender, PaintEventArgs e)
@@ -54,7 +57,6 @@ namespace JumpingRunner
             Player.Paint(sender, e);
             
             obstacle.Paint(sender, e);
-
         }
 
         internal void AttachObserver(Observer observer)
