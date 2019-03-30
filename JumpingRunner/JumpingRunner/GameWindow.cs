@@ -22,10 +22,14 @@ namespace JumpingRunner
             Settings.PictureBoxGroundHeight = Settings.PictureBoxHeight - 30;
 
             Player player = new BasicPlayer(new Rectangle(20, 200, 30, 30), Color.FromArgb(255,0,0));
-            Player decorated=new PlayerHatDecorator(player);
+            Player decorated = new PlayerHatDecorator(player);
             Player glasses = new PlayerSunglassesDecorator(decorated);
 
-            Game = new Game(glasses);
+            IBackgroundBuilder backgroundBuilder = new BackgroundBuilder();
+            BackgroundBuildDirector backgroundBuildDirector = new BackgroundBuildDirector(backgroundBuilder);
+            backgroundBuildDirector.Construct(EStageStyle.DESERT);
+            
+            Game = new Game(glasses, backgroundBuildDirector.GetBackground());
             Timer.Start();
         }
 
@@ -49,5 +53,6 @@ namespace JumpingRunner
         {
             Game.Player.EndJump();
         }
+        
     }
 }

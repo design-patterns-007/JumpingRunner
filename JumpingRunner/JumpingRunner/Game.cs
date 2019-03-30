@@ -10,10 +10,12 @@ namespace JumpingRunner
     public class Game
     {
         public Player Player { get; set; }
+        public Background Background{ get; set; }
 
-        public Game(Player player)
+        public Game(Player player, Background background)
         {
             Player = player;
+            Background = background;
         }
 
         public void Update()
@@ -23,6 +25,7 @@ namespace JumpingRunner
 
         public void Paint(object sender, PaintEventArgs e)
         {
+            Background.Paint(sender, e);
             Player.Paint(sender, e);
         }
 

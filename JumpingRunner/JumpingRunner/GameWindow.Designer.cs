@@ -1,4 +1,6 @@
-﻿namespace JumpingRunner
+﻿using System.Drawing;
+
+namespace JumpingRunner
 {
     partial class GameWindow
     {
@@ -43,10 +45,10 @@
             // 
             // PictureBoxGame
             // 
-            this.PictureBoxGame.Location = new System.Drawing.Point(11, 111);
+            this.PictureBoxGame.Location = new System.Drawing.Point(11, 79);
             this.PictureBoxGame.Margin = new System.Windows.Forms.Padding(4);
             this.PictureBoxGame.Name = "PictureBoxGame";
-            this.PictureBoxGame.Size = new System.Drawing.Size(859, 346);
+            this.PictureBoxGame.Size = new System.Drawing.Size(859, 378);
             this.PictureBoxGame.TabIndex = 0;
             this.PictureBoxGame.TabStop = false;
             this.PictureBoxGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxGame_Paint);

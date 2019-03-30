@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace JumpingRunner
 {
@@ -34,13 +35,13 @@ namespace JumpingRunner
                     }
                 case EStageStyle.ICE:
                     {
-                        backgroundBuilder.SetFloorColor(Color.AliceBlue);
-                        backgroundBuilder.SetSkyColor(Color.Blue);
+                        backgroundBuilder.SetFloorColor(Color.LightCyan);
+                        backgroundBuilder.SetSkyColor(Color.LightSkyBlue);
                         break;
                     }
             }
         }
-
+        
         public Background GetBackground()
         {
             return backgroundBuilder.GetBackground();
