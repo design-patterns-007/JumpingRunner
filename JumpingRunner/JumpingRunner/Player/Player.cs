@@ -10,8 +10,8 @@ namespace JumpingRunner
 {
     abstract public class Player
     {
-        protected float _gravity = 0.5f;
-        protected float _jumpSpeed = -15.0f;
+        protected float _gravity = 0.9f;
+        protected float _jumpSpeed = -18.0f;
         protected float _yVelocity = 0.0f;
         
         public Color Color { get; set; }
@@ -31,6 +31,12 @@ namespace JumpingRunner
             Shape = temp;
 
             if (Shape.Bottom > Settings.PictureBoxGroundHeight) {
+                int diff = Settings.PictureBoxGroundHeight- Shape.Bottom;
+
+                var temp2 = Shape;
+                temp2.Offset(0, diff);
+                Shape = temp2;
+
                 _yVelocity = 0.0f;
                 IsOnGround = true;
             }

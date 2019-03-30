@@ -16,7 +16,7 @@ namespace JumpingRunner.Observers
 
         public override void Update()
         {
-            foreach(Obstacle obstacle in Game.Obstacles) {
+            foreach(Obstacle obstacle in Game.ObstacleManager.Obstacles) {
                 if (PlayerInObstacle(Game.Player, obstacle)) {
                     Game.Player.IsAlive = false;
                     return;

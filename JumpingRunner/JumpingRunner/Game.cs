@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JumpingRunner.Observers;
+using JumpingRunner.Manager;
 
 namespace JumpingRunner
 {
@@ -15,48 +16,34 @@ namespace JumpingRunner
         public Player Player { get; set; }
         public Background Background { get; set; }
 
-        ObstacleFactory pitFactory { get; set; } = new PitFactory();
-        Obstacle obstacle;
-
-        public List<Obstacle> Obstacles { get; set; }
+        public ObstacleManager ObstacleManager { get; set; }
         public List<Observer> Observers { get; set; }
 
         public Game(Player player, Background background)
         {
             Player = player;
             Background = background;
-
-            PointF[] points = new PointF[3];
-            points[0] = new PointF(620, 240);
-            points[1] = new PointF(600, 280);
-            points[2] = new PointF(640, 280);
-            obstacle = pitFactory.GetObstacle(points, Color.Black);
-        
-            Obstacles = new List<Obstacle>();
+           
+            ObstacleManager = new ObstacleManager();
             Observers = new List<Observer>();
-
-            Obstacles.Add(obstacle);
-
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);
-
         }
 
         public void Update()
         {
             Player.Update();
-            obstacle.Update();
-            NotifyObservers();
-
-            Console.WriteLine(Obstacles.Count);
+            ObstacleManager.Update();
+            
+            NotifyObservers();            
         }
 
         public void Paint(object sender, PaintEventArgs e)
         {
             Background.Paint(sender, e);
             Player.Paint(sender, e);
-            
-            obstacle.Paint(sender, e);
+
+            ObstacleManager.Paint(sender, e);
         }
 
         internal void AttachObserver(Observer observer)

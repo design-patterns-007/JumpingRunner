@@ -45,10 +45,9 @@ namespace JumpingRunner
             // 
             // PictureBoxGame
             // 
-            this.PictureBoxGame.Location = new System.Drawing.Point(11, 79);
-            this.PictureBoxGame.Margin = new System.Windows.Forms.Padding(4);
+            this.PictureBoxGame.Location = new System.Drawing.Point(8, 64);
             this.PictureBoxGame.Name = "PictureBoxGame";
-            this.PictureBoxGame.Size = new System.Drawing.Size(859, 378);
+            this.PictureBoxGame.Size = new System.Drawing.Size(644, 307);
             this.PictureBoxGame.TabIndex = 0;
             this.PictureBoxGame.TabStop = false;
             this.PictureBoxGame.Paint += new System.Windows.Forms.PaintEventHandler(this.PictureBoxGame_Paint);
@@ -56,39 +55,35 @@ namespace JumpingRunner
             // LevelLabel
             // 
             this.LevelLabel.AutoSize = true;
-            this.LevelLabel.Location = new System.Drawing.Point(5, 47);
-            this.LevelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LevelLabel.Location = new System.Drawing.Point(4, 38);
             this.LevelLabel.Name = "LevelLabel";
-            this.LevelLabel.Size = new System.Drawing.Size(80, 17);
+            this.LevelLabel.Size = new System.Drawing.Size(62, 13);
             this.LevelLabel.TabIndex = 1;
             this.LevelLabel.Text = "Select level";
             // 
             // ComboBoxLevel
             // 
             this.ComboBoxLevel.FormattingEnabled = true;
-            this.ComboBoxLevel.Location = new System.Drawing.Point(93, 44);
-            this.ComboBoxLevel.Margin = new System.Windows.Forms.Padding(4);
+            this.ComboBoxLevel.Location = new System.Drawing.Point(70, 36);
             this.ComboBoxLevel.Name = "ComboBoxLevel";
-            this.ComboBoxLevel.Size = new System.Drawing.Size(97, 24);
+            this.ComboBoxLevel.Size = new System.Drawing.Size(74, 21);
             this.ComboBoxLevel.TabIndex = 2;
             // 
             // LabelPlayerEquipment
             // 
             this.LabelPlayerEquipment.AutoSize = true;
-            this.LabelPlayerEquipment.Location = new System.Drawing.Point(462, 47);
-            this.LabelPlayerEquipment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LabelPlayerEquipment.Location = new System.Drawing.Point(346, 38);
             this.LabelPlayerEquipment.Name = "LabelPlayerEquipment";
-            this.LabelPlayerEquipment.Size = new System.Drawing.Size(118, 17);
+            this.LabelPlayerEquipment.Size = new System.Drawing.Size(88, 13);
             this.LabelPlayerEquipment.TabIndex = 3;
             this.LabelPlayerEquipment.Text = "Player equipment";
             // 
             // CheckBoxHat
             // 
             this.CheckBoxHat.AutoSize = true;
-            this.CheckBoxHat.Location = new System.Drawing.Point(588, 47);
-            this.CheckBoxHat.Margin = new System.Windows.Forms.Padding(4);
+            this.CheckBoxHat.Location = new System.Drawing.Point(441, 38);
             this.CheckBoxHat.Name = "CheckBoxHat";
-            this.CheckBoxHat.Size = new System.Drawing.Size(52, 21);
+            this.CheckBoxHat.Size = new System.Drawing.Size(43, 17);
             this.CheckBoxHat.TabIndex = 4;
             this.CheckBoxHat.Text = "Hat";
             this.CheckBoxHat.UseVisualStyleBackColor = true;
@@ -96,20 +91,18 @@ namespace JumpingRunner
             // CheckBoxSunGlasses
             // 
             this.CheckBoxSunGlasses.AutoSize = true;
-            this.CheckBoxSunGlasses.Location = new System.Drawing.Point(648, 46);
-            this.CheckBoxSunGlasses.Margin = new System.Windows.Forms.Padding(4);
+            this.CheckBoxSunGlasses.Location = new System.Drawing.Point(486, 37);
             this.CheckBoxSunGlasses.Name = "CheckBoxSunGlasses";
-            this.CheckBoxSunGlasses.Size = new System.Drawing.Size(103, 21);
+            this.CheckBoxSunGlasses.Size = new System.Drawing.Size(80, 17);
             this.CheckBoxSunGlasses.TabIndex = 5;
             this.CheckBoxSunGlasses.Text = "Sunglasses";
             this.CheckBoxSunGlasses.UseVisualStyleBackColor = true;
             // 
             // ButtonStart
             // 
-            this.ButtonStart.Location = new System.Drawing.Point(768, 43);
-            this.ButtonStart.Margin = new System.Windows.Forms.Padding(4);
+            this.ButtonStart.Location = new System.Drawing.Point(576, 35);
             this.ButtonStart.Name = "ButtonStart";
-            this.ButtonStart.Size = new System.Drawing.Size(100, 28);
+            this.ButtonStart.Size = new System.Drawing.Size(75, 23);
             this.ButtonStart.TabIndex = 6;
             this.ButtonStart.Text = "Start";
             this.ButtonStart.UseVisualStyleBackColor = true;
@@ -122,27 +115,25 @@ namespace JumpingRunner
             // comboBoxBackground
             // 
             this.comboBoxBackground.FormattingEnabled = true;
-            this.comboBoxBackground.Location = new System.Drawing.Point(348, 42);
-            this.comboBoxBackground.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxBackground.Location = new System.Drawing.Point(261, 34);
             this.comboBoxBackground.Name = "comboBoxBackground";
-            this.comboBoxBackground.Size = new System.Drawing.Size(97, 24);
+            this.comboBoxBackground.Size = new System.Drawing.Size(74, 21);
             this.comboBoxBackground.TabIndex = 8;
             // 
             // BackgroundLabel
             // 
             this.BackgroundLabel.AutoSize = true;
-            this.BackgroundLabel.Location = new System.Drawing.Point(214, 46);
-            this.BackgroundLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BackgroundLabel.Location = new System.Drawing.Point(160, 37);
             this.BackgroundLabel.Name = "BackgroundLabel";
-            this.BackgroundLabel.Size = new System.Drawing.Size(126, 17);
+            this.BackgroundLabel.Size = new System.Drawing.Size(97, 13);
             this.BackgroundLabel.TabIndex = 7;
             this.BackgroundLabel.Text = "Select background";
             // 
             // GameWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(881, 470);
+            this.ClientSize = new System.Drawing.Size(661, 382);
             this.Controls.Add(this.comboBoxBackground);
             this.Controls.Add(this.BackgroundLabel);
             this.Controls.Add(this.ButtonStart);
@@ -153,7 +144,6 @@ namespace JumpingRunner
             this.Controls.Add(this.LevelLabel);
             this.Controls.Add(this.PictureBoxGame);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GameWindow";
             this.Text = "Form1";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameWindow_KeyPress);

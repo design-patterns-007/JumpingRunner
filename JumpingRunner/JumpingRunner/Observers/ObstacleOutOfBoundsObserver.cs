@@ -16,12 +16,12 @@ namespace JumpingRunner.Observers
 
         public override void Update()
         {
-            if (Game.Obstacles.Count > 0) {
-                Obstacle obstacle = Game.Obstacles.First();
+            if (Game.ObstacleManager.Obstacles.Count > 0) {
+                Obstacle obstacle = Game.ObstacleManager.Obstacles.First();
                 float maxXCoord = MaxXCoord(obstacle);
 
                 if (maxXCoord < 0) {
-                    Game.Obstacles.Remove(obstacle);
+                    Game.ObstacleManager.Obstacles.Remove(obstacle);
                 }
             }
         }
