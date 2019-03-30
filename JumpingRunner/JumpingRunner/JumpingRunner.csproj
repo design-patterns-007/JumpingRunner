@@ -48,7 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Background.cs" />
+    <Compile Include="BackgroundBuildDirector.cs" />
+    <Compile Include="BackgroundBuilder.cs" />
     <Compile Include="BasicPlayer.cs" />
+    <Compile Include="EStageStyle.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameWindow.cs">
       <SubType>Form</SubType>
@@ -56,6 +60,7 @@
     <Compile Include="GameWindow.Designer.cs">
       <DependentUpon>GameWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="IBackgroundBuilder.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerDecorator.cs" />
     <Compile Include="PlayerHatDecorator.cs" />
