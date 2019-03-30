@@ -14,6 +14,7 @@ namespace JumpingRunner
         {
             Shape = shape;
             Color = color;
+            IsAlive = true;
         }
 
         public override void Paint(object sender, PaintEventArgs e)

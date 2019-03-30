@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace JumpingRunner.Obstacle
+namespace JumpingRunner.Obstacles
 {
     class Spike : Obstacle
     {
-        public Spike(Point[] points, Color color) : base(points, color)
+        public Spike(PointF[] points, Color color) : base(points, color)
         {
         }
 

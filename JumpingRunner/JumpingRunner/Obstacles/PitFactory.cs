@@ -1,10 +1,10 @@
 ﻿using System.Drawing;
 
-namespace JumpingRunner.Obstacle
+namespace JumpingRunner.Obstacles
 {
     class PitFactory : ObstacleFactory
     {
-        public override Obstacle GetObstacle(Point[] pointCollection, Color color)
+        public override Obstacle GetObstacle(PointF[] pointCollection, Color color)
         {
             return new Pit(pointCollection, color);
         }

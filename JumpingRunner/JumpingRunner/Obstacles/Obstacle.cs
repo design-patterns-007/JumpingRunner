@@ -1,17 +1,17 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace JumpingRunner.Obstacle
+namespace JumpingRunner.Obstacles
 {
-    abstract class Obstacle
+    public abstract class Obstacle
     {
-        public Point[] Points = new Point[4];
+        public PointF[] Points = new PointF[4];
         public Color Color { get; set; }
         public int XVelocity { get; set; } = 4;
 
         public abstract EObstacleType Type();
 
-        public Obstacle(Point[] points, Color color)
+        public Obstacle(PointF[] points, Color color)
         {
             Points = points;
             Color = color;

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Drawing;
 
-namespace JumpingRunner.Obstacle
+namespace JumpingRunner.Obstacles
 {
     class SpikeFactory : ObstacleFactory
     {
-        public override Obstacle GetObstacle(Point[] pointCollection, Color color)
+        public override Obstacle GetObstacle(PointF[] pointCollection, Color color)
         {
             return new Spike(pointCollection, color);
         }

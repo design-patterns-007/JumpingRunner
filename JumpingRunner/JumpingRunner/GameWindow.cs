@@ -1,4 +1,4 @@
-﻿using JumpingRunner.Obstacle;
+﻿using JumpingRunner.Obstacles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

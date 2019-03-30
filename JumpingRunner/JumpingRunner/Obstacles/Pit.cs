@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace JumpingRunner.Obstacle
+namespace JumpingRunner.Obstacles
 {
     class Pit : Obstacle
     {
-        public Pit(Point[] points, Color color) : base(points, color)
+        public Pit(PointF[] points, Color color) : base(points, color)
         {
         }
 

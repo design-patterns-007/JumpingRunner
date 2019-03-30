@@ -16,6 +16,7 @@ namespace JumpingRunner
         {
             DecoratedPlayer = decoratedPlayer;
             Shape = DecoratedPlayer.Shape;
+            IsAlive = DecoratedPlayer.IsAlive;
         }
 
         public override void Update()
