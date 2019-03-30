@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JumpingRunner.Obstacle;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media;
 
 namespace JumpingRunner
 {
@@ -21,14 +23,14 @@ namespace JumpingRunner
             Settings.PictureBoxWidth = PictureBoxGame.Width;
             Settings.PictureBoxGroundHeight = Settings.PictureBoxHeight - 30;
 
-            Player player = new BasicPlayer(new Rectangle(20, 200, 30, 30), Color.FromArgb(255,0,0));
+            Player player = new BasicPlayer(new Rectangle(20, 200, 30, 30), System.Drawing.Color.FromArgb(255,0,0));
             Player decorated = new PlayerHatDecorator(player);
             Player glasses = new PlayerSunglassesDecorator(decorated);
 
             IBackgroundBuilder backgroundBuilder = new BackgroundBuilder();
             BackgroundBuildDirector backgroundBuildDirector = new BackgroundBuildDirector(backgroundBuilder);
             backgroundBuildDirector.Construct(EStageStyle.DESERT);
-            
+
             Game = new Game(glasses, backgroundBuildDirector.GetBackground());
             Timer.Start();
         }

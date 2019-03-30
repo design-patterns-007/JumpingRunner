@@ -10,7 +10,7 @@ namespace JumpingRunner.Obstacle
 {
     class Spike : Obstacle
     {
-        public Spike(PointCollection points, System.Drawing.Color color) : base(points, color)
+        public Spike(Point[] points, System.Drawing.Color color) : base(points, color)
         {
         }
 

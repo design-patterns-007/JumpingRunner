@@ -8,15 +8,11 @@ using System.Windows.Media;
 
 namespace JumpingRunner.Obstacle
 {
-    class Pit : Obstacle
+    class PitFactory : ObstacleFactory
     {
-        public Pit(Point[] points, System.Drawing.Color color) : base(points, color)
+        public override Obstacle GetObstacle(Point[] pointCollection, System.Drawing.Color color)
         {
-        }
-
-        public override EObstacleType Type()
-        {
-            return EObstacleType.Pit;
+            return new Pit(pointCollection, color);
         }
     }
 }
