@@ -23,13 +23,10 @@ namespace JumpingRunner
 
             Player player = new BasicPlayer(new Rectangle(20, 200, 30, 30), Color.FromArgb(255,0,0));
             Player decorated=new PlayerHatDecorator(player);
-
             Player glasses = new PlayerSunglassesDecorator(decorated);
 
             Game = new Game(glasses);
             Timer.Start();
-            
-            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
