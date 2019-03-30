@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Background.cs" />
-    <Compile Include="BackgroundBuildDirector.cs" />
-    <Compile Include="BackgroundBuilder.cs" />
-    <Compile Include="BasicPlayer.cs" />
-    <Compile Include="EStageStyle.cs" />
+    <Compile Include="Background\Background.cs" />
+    <Compile Include="Background\BackgroundBuildDirector.cs" />
+    <Compile Include="Background\BackgroundBuilder.cs" />
+    <Compile Include="Player\BasicPlayer.cs" />
+    <Compile Include="Background\EStageStyle.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameWindow.cs">
       <SubType>Form</SubType>
@@ -60,11 +60,11 @@
     <Compile Include="GameWindow.Designer.cs">
       <DependentUpon>GameWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="IBackgroundBuilder.cs" />
-    <Compile Include="Player.cs" />
-    <Compile Include="PlayerDecorator.cs" />
-    <Compile Include="PlayerHatDecorator.cs" />
-    <Compile Include="PlayerSunglassesDecorator.cs" />
+    <Compile Include="Background\IBackgroundBuilder.cs" />
+    <Compile Include="Player\Player.cs" />
+    <Compile Include="Player\PlayerDecorator.cs" />
+    <Compile Include="Player\PlayerHatDecorator.cs" />
+    <Compile Include="Player\PlayerSunglassesDecorator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
@@ -93,5 +93,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
