@@ -11,26 +11,29 @@ namespace JumpingRunner.Manager
     public class ObstacleManager
     {
         public List<Obstacle> Obstacles { get; set; }
-        public Timer Timer;
-        private ObstacleFactoryBridge _obstacleFactoryBridge;
-        private Random _random;
+        public Timer _timer;
 
         public ObstacleManager()
         {
             Obstacles = new List<Obstacle>();
-            Timer = new Timer();
-            _obstacleFactoryBridge = new ObstacleFactoryBridge();
-            _random = new Random();
-
-            Timer.Interval = 1300;
-            Timer.Tick += TimerTick;
-            Timer.Start();
+            _timer = new Timer();
+            _timer.Interval = 1300;
+            _timer.Tick += TimerTick;
+            _timer.Start();
         }
 
         private void TimerTick(object sender, EventArgs e)
         {
-            int factoryIndex = _random.Next(ObstacleFactoryBridge.NumberOfFactories);
-            Obstacles.Add(_obstacleFactoryBridge.SpawnObstacle(factoryIndex));
+            Random random = new Random();
+            int result= random.Next(2);
+            ObstacleFactory factory = null;
+
+            if (result==1) {
+                factory = new SpikeFactory();                                
+            } else{
+                factory = new PitFactory();
+            } 
+            Obstacles.Add(factory.GetObstacle());
         }
 
         public void Update()

@@ -59,8 +59,6 @@
     <Compile Include="Dificulties\HardDificulty.cs" />
     <Compile Include="Dificulties\IDificulty.cs" />
     <Compile Include="Dificulties\ImposibleDificulty.cs" />
-    <Compile Include="Manager\IObstacleBridge.cs" />
-    <Compile Include="Manager\ObstacleFactoryBridge.cs" />
     <Compile Include="Manager\ObstacleManager.cs" />
     <Compile Include="Observers\CollisionObserver.cs" />
     <Compile Include="Observers\Observer.cs" />
