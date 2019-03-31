@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JumpingRunner.Observers;
 using JumpingRunner.Manager;
-using JumpingRunner.Dificulties;
+<<<<<<< HEAD
+using JumpingRunner.Difficulties;
+=======
+>>>>>>> parent of 09a9724... added Dificulties - Strategy Pattern
 
 namespace JumpingRunner
 {
@@ -20,15 +23,26 @@ namespace JumpingRunner
         public ObstacleManager ObstacleManager { get; set; }
         public List<Observer> Observers { get; set; }
 
-        public IDificulty dificulty = new ImposibleDificulty();
+<<<<<<< HEAD
+        public IDifficulty dificulty = new ImposibleDifficulty();
 
+=======
+>>>>>>> parent of 09a9724... added Dificulties - Strategy Pattern
         public Game(Player player, Background background)
         {
             Player = player;
             Background = background;
            
             ObstacleManager = new ObstacleManager();
-            dificulty.SetRespawnInterval(ObstacleManager._timer);
+<<<<<<< HEAD
+<<<<<<< HEAD
+            ObstacleManager._timer = dificulty.GetRespawnInterval(ObstacleManager._timer);
+
+=======
+>>>>>>> parent of 09a9724... added Dificulties - Strategy Pattern
+=======
+            dificulty.SetRespawnInterval(ObstacleManager.Timer);
+>>>>>>> d3464a4aab3c8308035d0d64e181f851358060e1
             Observers = new List<Observer>();
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);

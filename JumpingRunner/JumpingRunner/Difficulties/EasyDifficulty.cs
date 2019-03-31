@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JumpingRunner.Dificulties
+namespace JumpingRunner.Difficulties
 {
-    public class EasyDificulty : IDificulty
+    public class EasyDifficulty : IDifficulty
     {
-        public void SetRespawnInterval(Timer timer)
+        public Timer GetRespawnInterval(Timer timer)
         {
             timer.Interval = 1600;
+            return timer;
         }
     }
 }
