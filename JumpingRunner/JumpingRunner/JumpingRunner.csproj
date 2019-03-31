@@ -55,10 +55,13 @@
     <Compile Include="Background\Background.cs" />
     <Compile Include="Background\BackgroundBuildDirector.cs" />
     <Compile Include="Background\BackgroundBuilder.cs" />
+<<<<<<< HEAD
     <Compile Include="Difficulties\EasyDifficulty.cs" />
     <Compile Include="Difficulties\HardDifficulty.cs" />
     <Compile Include="Difficulties\IDifficulty.cs" />
     <Compile Include="Difficulties\ImposibleDifficulty.cs" />
+=======
+>>>>>>> parent of 09a9724... added Dificulties - Strategy Pattern
     <Compile Include="Manager\ObstacleManager.cs" />
     <Compile Include="Observers\CollisionObserver.cs" />
     <Compile Include="Observers\Observer.cs" />

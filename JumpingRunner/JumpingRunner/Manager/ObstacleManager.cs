@@ -12,7 +12,7 @@ namespace JumpingRunner.Manager
     public class ObstacleManager
     {
         public List<Obstacle> Obstacles { get; set; }
-        public Timer _timer;
+        private Timer _timer;
 
         public ObstacleManager()
         {
