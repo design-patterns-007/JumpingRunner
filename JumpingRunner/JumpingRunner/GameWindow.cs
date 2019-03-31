@@ -29,7 +29,7 @@ namespace JumpingRunner
 
             IBackgroundBuilder backgroundBuilder = new BackgroundBuilder();
             BackgroundBuildDirector backgroundBuildDirector = new BackgroundBuildDirector(backgroundBuilder);
-            backgroundBuildDirector.Construct(EStageStyle.DESERT);
+            backgroundBuildDirector.Construct(EStageStyle.ICE);
 
             Game = new Game(glasses, backgroundBuildDirector.GetBackground());
             Timer.Start();
