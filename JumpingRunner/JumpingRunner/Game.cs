@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JumpingRunner.Observers;
 using JumpingRunner.Manager;
-using JumpingRunner.Dificulties;
+using JumpingRunner.Difficulties;
 
 namespace JumpingRunner
 {
@@ -20,7 +20,7 @@ namespace JumpingRunner
         public ObstacleManager ObstacleManager { get; set; }
         public List<Observer> Observers { get; set; }
 
-        public IDificulty dificulty = new ImposibleDificulty();
+        public IDifficulty dificulty = new ImposibleDifficulty();
 
         public Game(Player player, Background background)
         {
@@ -28,7 +28,8 @@ namespace JumpingRunner
             Background = background;
            
             ObstacleManager = new ObstacleManager();
-            dificulty.SetRespawnInterval(ObstacleManager._timer);
+            ObstacleManager._timer = dificulty.GetRespawnInterval(ObstacleManager._timer);
+
             Observers = new List<Observer>();
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);

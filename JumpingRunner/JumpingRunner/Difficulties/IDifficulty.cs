@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JumpingRunner.Dificulties
+namespace JumpingRunner.Difficulties
 {
-    public interface IDificulty
+    public interface IDifficulty
     {
-        void SetRespawnInterval(Timer timer);
+        Timer GetRespawnInterval(Timer timer);
     }
 }

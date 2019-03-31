@@ -1,4 +1,5 @@
-﻿using JumpingRunner.Obstacles;
+﻿using JumpingRunner.Difficulties;
+using JumpingRunner.Obstacles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace JumpingRunner.Manager
         private void TimerTick(object sender, EventArgs e)
         {
             Random random = new Random();
-            int result= random.Next(2);
+            int result = random.Next(2);
             ObstacleFactory factory = null;
 
             if (result==1) {
