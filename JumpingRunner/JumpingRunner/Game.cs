@@ -28,7 +28,7 @@ namespace JumpingRunner
             Background = background;
            
             ObstacleManager = new ObstacleManager();
-            dificulty.SetRespawnInterval(ObstacleManager._timer);
+            dificulty.SetRespawnInterval(ObstacleManager.Timer);
             Observers = new List<Observer>();
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);
