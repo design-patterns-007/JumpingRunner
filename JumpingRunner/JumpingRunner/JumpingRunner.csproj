@@ -55,6 +55,10 @@
     <Compile Include="Background\Background.cs" />
     <Compile Include="Background\BackgroundBuildDirector.cs" />
     <Compile Include="Background\BackgroundBuilder.cs" />
+    <Compile Include="Dificulties\EasyDificulty.cs" />
+    <Compile Include="Dificulties\HardDificulty.cs" />
+    <Compile Include="Dificulties\IDificulty.cs" />
+    <Compile Include="Dificulties\ImposibleDificulty.cs" />
     <Compile Include="Manager\ObstacleManager.cs" />
     <Compile Include="Observers\CollisionObserver.cs" />
     <Compile Include="Observers\Observer.cs" />
