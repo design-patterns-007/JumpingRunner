@@ -110,7 +110,7 @@ namespace JumpingRunner
             // 
             // Timer
             // 
-            this.Timer.Interval = 16;
+            this.Timer.Interval = 1;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // ComboBoxBackground

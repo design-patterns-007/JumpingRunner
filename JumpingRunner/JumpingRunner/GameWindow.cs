@@ -38,6 +38,7 @@ namespace JumpingRunner
 
             ComboBoxLevel.Items.Add("Easy");
             ComboBoxLevel.Items.Add("Hard");
+            ComboBoxLevel.Items.Add("Impossible");
             ComboBoxLevel.SelectedIndex = 0;
             ComboBoxLevel.DropDownStyle = ComboBoxStyle.DropDownList;
         }
@@ -45,6 +46,7 @@ namespace JumpingRunner
         private void InitializeGame()
         {
             Player player = new BasicPlayer(new Rectangle(100, 200, 30, 30), Color.Red);
+            //set hats if any
             if (CheckBoxHat.Checked) {
                 player = new PlayerHatDecorator(player);
                 Console.WriteLine("x");
@@ -56,6 +58,7 @@ namespace JumpingRunner
             IBackgroundBuilder backgroundBuilder = new BackgroundBuilder();
             BackgroundBuildDirector backgroundBuildDirector = new BackgroundBuildDirector(backgroundBuilder);
 
+            //set the background
             if ((string) ComboBoxBackground.SelectedItem == "Ice") {
                 backgroundBuildDirector.Construct(EStageStyle.ICE);
             } else if ((string) ComboBoxBackground.SelectedItem == "Desert") {
@@ -68,6 +71,7 @@ namespace JumpingRunner
 
             IDifficulty difficulty=null;
 
+            //set the difficulty
             if (difficultySelected == "Easy") {
                 difficulty = new EasyDifficulty();
             } else if (difficultySelected == "Hard") {
@@ -77,12 +81,15 @@ namespace JumpingRunner
             }
 
             Game = new Game(player, background,difficulty);
+            
         }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            PictureBoxGame.Invalidate();
-            Game.Update();
+            if (!Game.IsGameOver) {
+                PictureBoxGame.Invalidate();
+                Game.Update();
+            }
         }
 
         private void PictureBoxGame_Paint(object sender, PaintEventArgs e)

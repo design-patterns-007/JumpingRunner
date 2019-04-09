@@ -7,7 +7,7 @@ namespace JumpingRunner.Obstacles
     {
         public PointF[] Points = new PointF[4];
         public Color Color { get; set; }
-        public int XVelocity { get; set; } = 5;
+        public int XVelocity { get; set; } = 4;
 
         public abstract EObstacleType Type();
 

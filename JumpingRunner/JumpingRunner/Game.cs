@@ -22,6 +22,7 @@ namespace JumpingRunner
         public List<Observer> Observers { get; set; }
 
         public IDifficulty Difficulty { get; set; }
+        public bool IsGameOver { get; private set; }
 
         public Game(Player player, Background background, IDifficulty difficulty)
         {
@@ -35,6 +36,8 @@ namespace JumpingRunner
             Observers = new List<Observer>();
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);
+
+            IsGameOver = false;
         }
 
         public void Update()
@@ -42,7 +45,10 @@ namespace JumpingRunner
             Player.Update();
             ObstacleManager.Update();
             
-            NotifyObservers();            
+            NotifyObservers();
+            if (!Player.IsAlive) {
+                IsGameOver = true;
+            }
         }
 
         public void Paint(object sender, PaintEventArgs e)
