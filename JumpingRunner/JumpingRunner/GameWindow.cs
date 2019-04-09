@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Media;
+using System.Drawing;
+using JumpingRunner.Difficulties;
 
 namespace JumpingRunner
 {
@@ -23,16 +24,59 @@ namespace JumpingRunner
             Settings.PictureBoxWidth = PictureBoxGame.Width;
             Settings.PictureBoxGroundHeight = Settings.PictureBoxHeight - 30;
 
-            Player player = new BasicPlayer(new Rectangle(100, 200, 30, 30), System.Drawing.Color.FromArgb(255,0,0));
-            Player decorated = new PlayerHatDecorator(player);
-            Player glasses = new PlayerSunglassesDecorator(decorated);
+            InitializeComboboxes();
+            InitializeGame();
+        }
+
+        private void InitializeComboboxes()
+        {
+            ComboBoxBackground.Items.Add("Ice");
+            ComboBoxBackground.Items.Add("Desert");
+            ComboBoxBackground.Items.Add("Jungle");
+            ComboBoxBackground.SelectedIndex = 0;
+            ComboBoxBackground.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            ComboBoxLevel.Items.Add("Easy");
+            ComboBoxLevel.Items.Add("Hard");
+            ComboBoxLevel.SelectedIndex = 0;
+            ComboBoxLevel.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void InitializeGame()
+        {
+            Player player = new BasicPlayer(new Rectangle(100, 200, 30, 30), Color.Red);
+            if (CheckBoxHat.Checked) {
+                player = new PlayerHatDecorator(player);
+                Console.WriteLine("x");
+            }
+            if (CheckBoxSunGlasses.Checked) {
+                player = new PlayerSunglassesDecorator(player);
+            }
 
             IBackgroundBuilder backgroundBuilder = new BackgroundBuilder();
             BackgroundBuildDirector backgroundBuildDirector = new BackgroundBuildDirector(backgroundBuilder);
-            backgroundBuildDirector.Construct(EStageStyle.DESERT);
 
-            Game = new Game(glasses, backgroundBuildDirector.GetBackground());
-            Timer.Start();
+            if ((string) ComboBoxBackground.SelectedItem == "Ice") {
+                backgroundBuildDirector.Construct(EStageStyle.ICE);
+            } else if ((string) ComboBoxBackground.SelectedItem == "Desert") {
+                backgroundBuildDirector.Construct(EStageStyle.DESERT);
+            }else if((string) ComboBoxBackground.SelectedItem == "Jungle") {
+                backgroundBuildDirector.Construct(EStageStyle.JUNGLE);
+            }
+            Background background = backgroundBuildDirector.GetBackground();
+            string difficultySelected = (string)ComboBoxLevel.SelectedItem;
+
+            IDifficulty difficulty=null;
+
+            if (difficultySelected == "Easy") {
+                difficulty = new EasyDifficulty();
+            } else if (difficultySelected == "Hard") {
+                difficulty = new HardDifficulty();
+            } else if (difficultySelected == "Impossible") {
+                difficulty = new ImposibleDifficulty();
+            }
+
+            Game = new Game(player, background,difficulty);
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -48,13 +92,31 @@ namespace JumpingRunner
 
         private void GameWindow_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Game.Player.StartJump();
+            if (e.KeyChar == 'w') {
+                Game.Player.StartJump();
+            }
         }
 
         private void GameWindow_KeyUp(object sender, KeyEventArgs e)
-        {
+        {            
             Game.Player.EndJump();
         }
-        
+
+        private void ButtonStart_Click(object sender, EventArgs e)
+        {
+            InitializeGame();
+            Timer.Start();           
+        }
+
+        private void SetWindowEnable(bool enabled)
+        {
+            ComboBoxBackground.Enabled = enabled;
+            ComboBoxLevel.Enabled = enabled;
+            CheckBoxHat.Enabled = enabled;
+            CheckBoxSunGlasses.Enabled = enabled;
+            ButtonStart.Enabled = enabled;
+        }
+
+
     }
 }

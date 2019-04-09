@@ -19,7 +19,8 @@ namespace JumpingRunner
 
         public override void Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawRectangle(new Pen(Color), Shape);
+            SolidBrush brush = new SolidBrush(Color);
+            e.Graphics.FillRectangle(brush, Shape);
         }
     }
 }

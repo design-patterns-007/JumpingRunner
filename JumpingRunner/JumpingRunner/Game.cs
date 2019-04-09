@@ -21,20 +21,17 @@ namespace JumpingRunner
         public ObstacleManager ObstacleManager { get; set; }
         public List<Observer> Observers { get; set; }
 
-        public IDifficulty dificulty = new ImposibleDifficulty();
+        public IDifficulty Difficulty { get; set; }
 
-        public Game(Player player, Background background)
+        public Game(Player player, Background background, IDifficulty difficulty)
         {
             Player = player;
             Background = background;
            
             ObstacleManager = new ObstacleManager();
-
-            ObstacleManager.Timer = dificulty.GetRespawnInterval(ObstacleManager.Timer);
-
-
-            //dificulty.SetRespawnInterval(ObstacleManager.Timer);
-
+            Difficulty = difficulty;
+          
+            ObstacleManager.Timer = Difficulty.GetRespawnInterval(ObstacleManager.Timer);
             Observers = new List<Observer>();
             Observer collissionObserver = new CollisionObserver(this);
             Observer outOfBoundsObserver = new ObstacleOutOfBoundsObserver(this);

@@ -38,7 +38,7 @@ namespace JumpingRunner
             this.CheckBoxSunGlasses = new System.Windows.Forms.CheckBox();
             this.ButtonStart = new System.Windows.Forms.Button();
             this.Timer = new System.Windows.Forms.Timer(this.components);
-            this.comboBoxBackground = new System.Windows.Forms.ComboBox();
+            this.ComboBoxBackground = new System.Windows.Forms.ComboBox();
             this.BackgroundLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGame)).BeginInit();
             this.SuspendLayout();
@@ -106,19 +106,20 @@ namespace JumpingRunner
             this.ButtonStart.TabIndex = 6;
             this.ButtonStart.Text = "Start";
             this.ButtonStart.UseVisualStyleBackColor = true;
+            this.ButtonStart.Click += new System.EventHandler(this.ButtonStart_Click);
             // 
             // Timer
             // 
             this.Timer.Interval = 16;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
-            // comboBoxBackground
+            // ComboBoxBackground
             // 
-            this.comboBoxBackground.FormattingEnabled = true;
-            this.comboBoxBackground.Location = new System.Drawing.Point(261, 34);
-            this.comboBoxBackground.Name = "comboBoxBackground";
-            this.comboBoxBackground.Size = new System.Drawing.Size(74, 21);
-            this.comboBoxBackground.TabIndex = 8;
+            this.ComboBoxBackground.FormattingEnabled = true;
+            this.ComboBoxBackground.Location = new System.Drawing.Point(261, 34);
+            this.ComboBoxBackground.Name = "ComboBoxBackground";
+            this.ComboBoxBackground.Size = new System.Drawing.Size(74, 21);
+            this.ComboBoxBackground.TabIndex = 8;
             // 
             // BackgroundLabel
             // 
@@ -134,7 +135,7 @@ namespace JumpingRunner
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(661, 382);
-            this.Controls.Add(this.comboBoxBackground);
+            this.Controls.Add(this.ComboBoxBackground);
             this.Controls.Add(this.BackgroundLabel);
             this.Controls.Add(this.ButtonStart);
             this.Controls.Add(this.CheckBoxSunGlasses);
@@ -145,7 +146,7 @@ namespace JumpingRunner
             this.Controls.Add(this.PictureBoxGame);
             this.KeyPreview = true;
             this.Name = "GameWindow";
-            this.Text = "Form1";
+            this.Text = "JumpingRunner";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GameWindow_KeyPress);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.GameWindow_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBoxGame)).EndInit();
@@ -164,7 +165,7 @@ namespace JumpingRunner
         private System.Windows.Forms.CheckBox CheckBoxSunGlasses;
         private System.Windows.Forms.Button ButtonStart;
         private System.Windows.Forms.Timer Timer;
-        private System.Windows.Forms.ComboBox comboBoxBackground;
+        private System.Windows.Forms.ComboBox ComboBoxBackground;
         private System.Windows.Forms.Label BackgroundLabel;
     }
 }
