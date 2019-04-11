@@ -39,7 +39,6 @@ namespace JumpingRunner.Manager
             } else{
                 factory = new PitFactory();
             } 
-            Obstacles.Add(factory.GetObstacle());
             int factoryIndex = _random.Next(ObstacleFactoryBridge.NumberOfFactories);
             Obstacles.Add(_obstacleFactoryBridge.SpawnObstacle(factoryIndex));
 
