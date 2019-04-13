@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using JumpingRunner.Difficulties;
+using System.Diagnostics;
 
 namespace JumpingRunner
 {
     public partial class GameWindow : Form
     {
         public Game Game { get; set; }
+        private int Seconds;
+        private int Milliseconds;
 
         public GameWindow()
         {
@@ -83,11 +86,34 @@ namespace JumpingRunner
             
         }
 
+        private void ShowTime()
+        {
+            sec.Text = Seconds.ToString(); 
+            ms.Text = Milliseconds.ToString(); 
+        }
+        private void IncreaseMilliseconds()
+        {
+            if(Milliseconds == 59)
+            {
+                Milliseconds = 0;
+                Seconds++;
+            }
+            else
+            {
+                Milliseconds++;
+            }
+        }
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (!Game.IsGameOver) {
+                IncreaseMilliseconds();
+                ShowTime();
                 PictureBoxGame.Invalidate();
                 Game.Update();
+            }
+            else
+            {
+                ShowTime();
             }
         }
 
@@ -107,9 +133,12 @@ namespace JumpingRunner
         {            
             Game.Player.EndJump();
         }
-
+        
         private void ButtonStart_Click(object sender, EventArgs e)
         {
+            Seconds = 0;
+            Milliseconds = 0;
+
             InitializeGame();
             Timer.Start();           
         }
@@ -122,7 +151,6 @@ namespace JumpingRunner
             CheckBoxSunGlasses.Enabled = enabled;
             ButtonStart.Enabled = enabled;
         }
-
-
+        
     }
 }
