@@ -11,7 +11,7 @@ namespace JumpingRunner.Difficulties
     {
         public Timer GetRespawnInterval(Timer timer)
         {
-            timer.Interval = 1600;
+            timer.Interval = 1500;
             return timer;
         }
     }
