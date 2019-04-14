@@ -4,11 +4,6 @@ namespace JumpingRunner.Obstacles
 {
     class PitFactory : ObstacleFactory
     {
-        public override Obstacle GetObstacle(PointF[] pointCollection, Color color)
-        {
-            return new Pit(pointCollection, color);
-        }
-
         public override Obstacle GetObstacle()
         {
             PointF[] points = new PointF[4];            
