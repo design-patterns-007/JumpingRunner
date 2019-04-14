@@ -19,10 +19,10 @@ namespace JumpingRunner
         {
             DecoratedPlayer.Paint(sender, e);
 
-            int hatX = DecoratedPlayer.Shape.X;
-            int hatY = DecoratedPlayer.Shape.Y-20;
-            int hatWidth = DecoratedPlayer.Shape.Width;
-            int hatHeight = DecoratedPlayer.Shape.Height-10;
+            int hatX = DecoratedPlayer.Shape.X+5;
+            int hatY = DecoratedPlayer.Shape.Y-15;
+            int hatWidth = DecoratedPlayer.Shape.Width-10;
+            int hatHeight = DecoratedPlayer.Shape.Height-15;
 
             Rectangle hat = new Rectangle(hatX, hatY, hatWidth, hatHeight);
 

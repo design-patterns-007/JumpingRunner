@@ -15,7 +15,7 @@ namespace JumpingRunner.Manager
         public Timer Timer;
         private ObstacleFactoryBridge _obstacleFactoryBridge;
         private Random _random;
-
+        private static float _speedIncrease = 1.01f;
         public ObstacleManager()
         {
             Obstacles = new List<Obstacle>();
@@ -24,14 +24,17 @@ namespace JumpingRunner.Manager
             _random = new Random();
 
             Timer.Interval = 1300;
-            Timer.Tick += TimerTick;
-            Timer.Start();
+            Timer.Tick += TimerTick;            
         }
 
         private void TimerTick(object sender, EventArgs e)
         {            
             int factoryIndex = _random.Next(ObstacleFactoryBridge.NumberOfFactories);
             Obstacles.Add(_obstacleFactoryBridge.SpawnObstacle(factoryIndex));
+            Obstacle.XVelocity *= _speedIncrease;
+            if (Timer.Interval > 5) {
+                Timer.Interval -= 5;                
+            }            
         }
 
         public void Update()

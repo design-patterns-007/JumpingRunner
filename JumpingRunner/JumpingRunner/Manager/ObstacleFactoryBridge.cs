@@ -11,6 +11,7 @@ namespace JumpingRunner.Manager
     {
         private ObstacleFactory _obstacleFactory { get; set; }
         public static int NumberOfFactories = 2;
+        
         public Obstacle SpawnObstacle(int value)
         {
             if (value == NumberOfFactories) {
@@ -21,7 +22,7 @@ namespace JumpingRunner.Manager
             switch (value) {
                 case 0: {
                         _obstacleFactory = new SpikeFactory();
-                        obstacle = _obstacleFactory.GetObstacle();
+                        obstacle = _obstacleFactory.GetObstacle();                        
                         break;
                     }
                 case 1: {
@@ -30,7 +31,7 @@ namespace JumpingRunner.Manager
                         break;
                     }
             }
-
+                                             
             return obstacle;
         }
     }

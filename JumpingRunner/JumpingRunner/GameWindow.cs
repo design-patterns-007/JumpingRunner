@@ -82,7 +82,7 @@ namespace JumpingRunner
             }
 
             Game = new Game(player, background,difficulty);
-            
+            Obstacle.XVelocity = 4.0f;            
         }
 
         private void ShowTime()
@@ -113,6 +113,8 @@ namespace JumpingRunner
             else
             {
                 ShowTime();
+                Game.Stop();
+                Timer.Stop();
             }
         }
 
@@ -137,9 +139,13 @@ namespace JumpingRunner
         {
             Seconds = 0;
             Milliseconds = 0;
-
+            if (Timer.Enabled) {
+                Timer.Stop();
+                Game.Stop();
+            }
             InitializeGame();
-            Timer.Start();           
+            Timer.Start();
+            Game.Start();
         }
     }
 }

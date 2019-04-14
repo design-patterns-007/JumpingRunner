@@ -40,6 +40,16 @@ namespace JumpingRunner
             IsGameOver = false;
         }
 
+        public void Start()
+        {
+            ObstacleManager.Timer.Start();
+        }
+
+        public void Stop()
+        {
+            ObstacleManager.Timer.Stop();
+        }
+
         public void Update()
         {
             Player.Update();

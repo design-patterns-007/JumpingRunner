@@ -14,7 +14,7 @@ namespace JumpingRunner.Obstacles
         {
             PointF[] points = new PointF[3];
    
-            points[0] = new PointF(Settings.PictureBoxWidth + 20, 240);
+            points[0] = new PointF(Settings.PictureBoxWidth + 20, 220);
             points[1] = new PointF(Settings.PictureBoxWidth, Settings.PictureBoxGroundHeight);
             points[2] = new PointF(Settings.PictureBoxWidth+40, Settings.PictureBoxGroundHeight);
 
