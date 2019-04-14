@@ -54,9 +54,9 @@ namespace JumpingRunner
         public void Paint(object sender, PaintEventArgs e)
         {
             Background.Paint(sender, e);
+            ObstacleManager.Paint(sender, e);
             Player.Paint(sender, e);
 
-            ObstacleManager.Paint(sender, e);
         }
 
         internal void AttachObserver(Observer observer)

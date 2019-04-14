@@ -15,8 +15,12 @@ namespace JumpingRunner
 
         public void Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(new SolidBrush(FloorColor), new Rectangle(0, 280, 700, 30));
-            e.Graphics.FillRectangle(new SolidBrush(SkyColor), new Rectangle(0, 0, 700, 280));
+            int width = Settings.PictureBoxWidth;
+            int heigth = Settings.PictureBoxHeight;
+            int groundHeigth = Settings.PictureBoxGroundHeight;
+
+            e.Graphics.FillRectangle(new SolidBrush(FloorColor), new Rectangle(0, groundHeigth, width, heigth-groundHeigth));
+            e.Graphics.FillRectangle(new SolidBrush(SkyColor), new Rectangle(0, 0, width, groundHeigth));
         }
     }
 }

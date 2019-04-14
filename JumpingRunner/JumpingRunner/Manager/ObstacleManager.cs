@@ -29,19 +29,9 @@ namespace JumpingRunner.Manager
         }
 
         private void TimerTick(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            int result = random.Next(2);
-            ObstacleFactory factory = null;
-
-            if (result==1) {
-                factory = new SpikeFactory();                                
-            } else{
-                factory = new PitFactory();
-            } 
+        {            
             int factoryIndex = _random.Next(ObstacleFactoryBridge.NumberOfFactories);
             Obstacles.Add(_obstacleFactoryBridge.SpawnObstacle(factoryIndex));
-
         }
 
         public void Update()

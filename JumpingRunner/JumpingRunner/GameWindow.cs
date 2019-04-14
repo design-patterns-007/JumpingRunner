@@ -50,8 +50,7 @@ namespace JumpingRunner
             Player player = new BasicPlayer(new Rectangle(100, 200, 30, 30), Color.Red);
             //set hats if any
             if (CheckBoxHat.Checked) {
-                player = new PlayerHatDecorator(player);
-                Console.WriteLine("x");
+                player = new PlayerHatDecorator(player);                
             }
             if (CheckBoxSunGlasses.Checked) {
                 player = new PlayerSunglassesDecorator(player);
@@ -142,15 +141,5 @@ namespace JumpingRunner
             InitializeGame();
             Timer.Start();           
         }
-
-        private void SetWindowEnable(bool enabled)
-        {
-            ComboBoxBackground.Enabled = enabled;
-            ComboBoxLevel.Enabled = enabled;
-            CheckBoxHat.Enabled = enabled;
-            CheckBoxSunGlasses.Enabled = enabled;
-            ButtonStart.Enabled = enabled;
-        }
-        
     }
 }
