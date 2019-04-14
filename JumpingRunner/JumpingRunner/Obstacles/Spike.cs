@@ -12,7 +12,7 @@ namespace JumpingRunner.Obstacles
 
         public override EObstacleType Type()
         {
-            return EObstacleType.Spike;
+            return EObstacleType.ESpike;
         }
     }
 }

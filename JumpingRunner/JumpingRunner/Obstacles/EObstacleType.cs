@@ -2,7 +2,7 @@
 {
     public enum EObstacleType
     {
-        Spike,
-        Pit
+        ESpike,
+        EPit
     }
 }
